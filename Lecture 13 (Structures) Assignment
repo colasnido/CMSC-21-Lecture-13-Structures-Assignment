@@ -1,0 +1,45 @@
+#include <stdio.h>
+#include <math.h>
+
+struct point {
+    float x;
+    float y;
+};
+
+int main() {
+    struct point point1, point2;
+
+    // Get input for point1
+    printf("Enter x of point1: ");
+    scanf("%f", &point1.x);
+    printf("Enter y of point1: ");
+    scanf("%f", &point1.y);
+
+    // Get input for point2
+    printf("Enter x of point2: ");
+    scanf("%f", &point2.x);
+    printf("Enter y of point2: ");
+    scanf("%f", &point2.y);
+
+    // Calculate slope
+    float slope = (point1.y - point2.y) / (point1.x - point2.x);
+
+    // Calculate midpoint
+    float midpoint = (point1.x + point2.x) / 2;
+
+    // Calculate distance
+    float distanceX = point2.x - point1.x;
+    float distanceY = point2.y - point1.y;
+    float distance = sqrt(distanceX * distanceX + distanceY * distanceY);
+
+    // Calculate y-intercept
+    float y_intercept = point1.y - (slope * point1.x);
+
+    // Display the results
+    printf("Slope: %.2f\n", slope);
+    printf("Midpoint: %.2f\n", midpoint);
+    printf("Distance: %.2f\n", distance);
+    printf("Slope-intercept form: y = %.2fx + %.2f\n", slope, y_intercept);
+
+    return 0;
+}
